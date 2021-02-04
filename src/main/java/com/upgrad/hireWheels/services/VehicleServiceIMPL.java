@@ -17,10 +17,12 @@ public class VehicleServiceIMPL {
 
     public vehicle getVehicleDetails(){
 
-        int id=1;
-        vehicle vehicle1= new vehicle();
-        vehicle1 = vehi.findById(id);
+        return vehi.findById(1).get();
 
+    }
+
+    public List<vehicle> getAllVehicleDetails(){
+        return vehi.findAll();
     }
 
 }

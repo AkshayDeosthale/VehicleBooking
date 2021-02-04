@@ -28,6 +28,17 @@ public class VehicleController {
         return(responseVehicleDTO);
 
     }
+
+    @GetMapping(value ={"/hirewheels/v1/allVehicles"})
+    public VehicleDTO getAllVehicles(){
+        List<vehicle>  v=vehicleService.getAllVehicleDetails();
+
+
+        VehicleDTO responseVehicleDTO= modelmapper.map(v,VehicleDTO.class);
+        return(responseVehicleDTO);
+
+    }
+
     @GetMapping(value={"/sayHelloMovie"})
     public String sayHello(){
         return "Hello World To All From MovieController";
